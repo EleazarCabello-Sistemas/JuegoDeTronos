@@ -1,0 +1,33 @@
+img{
+    width: 550px;
+    height: 300px;
+}
+
+div.header{
+    border: 1px solid white;
+    position: relative;
+    background-color: rgb(51, 51, 51);
+    width: 40%;
+    height: max-content;
+    left: 30%;
+    margin: 2px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.img{
+    position: relative;
+    left: 34%;
+    width: 550px;
+}
+
+span{
+    font-size: 100px;
+    border: 2px solid white;
+}
+
+.contenido{
+    height: 300px;
+}
+

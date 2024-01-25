@@ -1,0 +1,16 @@
+<div class="header">
+    <h1>Juego de tronos</h1>
+    <h3>TEXTO</h3>
+    <h3>Casas</h3>
+    <span [routerLink]="['/','houses']" > {{cantidadCasas}} </span>
+</div>
+
+<div class="img" *ngIf="false">
+    <img src="https://lossietereinos.com/wp-content/uploads/2013/06/House-a-song-of-ice-and-fire-29965891-1920-1080.jpg"
+        alt="">
+</div>
+
+<div class="contenido">
+    <router-outlet></router-outlet>
+</div>
+
