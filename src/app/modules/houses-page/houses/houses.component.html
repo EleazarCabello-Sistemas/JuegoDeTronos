@@ -11,7 +11,7 @@
                 <td>{{item.region}}</td>
                 <td class="registro">{{item.titles.length}}</td>
                 <td class="registro">
-                    <button [routerLink]="['/','members']">Miembros</button>
+                    <button (click)="guardCasa(item.url)" [routerLink]="['/','members']">Miembros</button>
                 </td>
             </tr>
     </table>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../../home-page/services/data-service.service';
 import { CaracterServiceService } from '../services/caracter-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-members',
@@ -9,27 +10,34 @@ import { CaracterServiceService } from '../services/caracter-service.service';
 })
 export class MembersComponent implements OnInit {
 
-  data: Array<any> = []
-  listaCaracteres: Array<any> = []
+  listaMembers: Array<any> = []
+  infoMiembros: Array<any> = []
+  urlImagen: string= ""
+  mostrarImagen: Boolean = false
   
+  constructor(private Houses: DataServiceService,private Miembro: CaracterServiceService) {
+    this.mostrarImagen = false
+    this.Miembro.getMiembros$().subscribe((Response:any) => {
+      this.listaMembers = Response.swornMembers
+      
+      for(let url of this.listaMembers){ 
+       this.Miembro.getMiembro$(url).subscribe(Response => {
+        this.infoMiembros.push(Response)
+       })
+        
+      }
 
-  constructor(private Houses: DataServiceService,private Caracters: CaracterServiceService) {
-   }
+    }) 
+  }
 
 
-  ngOnInit(): void {
-    this.Houses.getCasas$().subscribe((Response: any) => {
-      this.data = Response.swornMembers
-      console.log(this.data)
+  ngOnInit(): void {}
+
+  cargarImagen():void{
+    this.Miembro.getImagen$().subscribe(Response => {
+      this.urlImagen = Response.message
+      this.mostrarImagen = true
     })
   }
-
-  obtenerMiembros(){
-    for(let item in this.data){
-      console.log(item)
-    }
-
-    this.Caracters.getCaracter$("a").subscribe
-  }
-
+  
 }

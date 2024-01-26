@@ -9,16 +9,19 @@ body{
     position: relative;
     left: 30%;
     align-content:space-around;
-    
+    border-radius: 5px;
 }
 
 table{
     width: 645px;
-    border: 2px solid blanchedalmond
+    border: 5px solid rgb(30, 30, 30);
+    border-radius: 5px;
+    
 }
 
-td{
-    border: 2px outset white;
+tr{
+    border: 20px solid black;
+    margin: 0;
 }
 
 

@@ -1,3 +1,36 @@
 li{
     color: black;
 }
+
+ul{
+    align-content: center;
+}
+
+div{
+    background-color: rgb(119, 150, 255);
+    width: 50%;
+    height: max-content;
+    position: relative;
+    left: 27%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.regresar{
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    position: relative;
+    left: 48%;
+    color: blanchedalmond;
+}
+
+img{
+    width: 250px;
+    height:  200px;
+    left: 80%;
+    position:fixed;
+    top: 15%;
+}
