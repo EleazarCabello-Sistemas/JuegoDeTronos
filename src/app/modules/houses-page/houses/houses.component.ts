@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../../home-page/services/data-service.service';
+import { CaracterServiceService } from '../../members-page/services/caracter-service.service';
 
 @Component({
   selector: 'app-houses',
@@ -10,7 +11,7 @@ export class HousesComponent implements OnInit {
 
   data: Array<any> = []
 
-  constructor(private Houses: DataServiceService) {
+  constructor(private Houses: DataServiceService,private Caracter:CaracterServiceService) {
   }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class HousesComponent implements OnInit {
     })
   }
 
-
-
+  guardCasa(casaUrl:string):void{
+    this.Caracter.guardarCasa(casaUrl)
+  }
 }

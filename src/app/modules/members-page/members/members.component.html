@@ -1,5 +1,10 @@
 <div class="contenedor_lista">
-    <ul *ngFor="let item of data">
-        <li>{{item.swornMembers}}</li>
+    <ul *ngFor="let item of infoMiembros">
+        <li class="">{{item.name}}, {{item.gender}}, {{item.culture}}, {{item.titles}}
+            <button (click)="cargarImagen()" >Ver imagen</button>
+        </li>
     </ul>
+    
 </div>
+<button class="regresar" [routerLink]="['/','houses']" >Regresar</button>
+<img *ngIf="mostrarImagen" src="{{urlImagen}}" alt="">
