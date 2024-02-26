@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path:"members",
-    loadChildren:() => import("./modules/members-page/members-page.module").then(m => m.MembersPageModule)
+    loadChildren:() => import("./modules/membesdars-page/members-page.module").then(m => m.MembersPageModule)
   }
 
 ];
